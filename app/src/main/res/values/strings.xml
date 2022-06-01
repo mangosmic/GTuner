@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GTuner</string>
+    
+<!--    <string-array name="Mode">-->
+<!--        <item>E</item>-->
+<!--        <item>A</item>-->
+<!--    </string-array>-->
 </resources>
