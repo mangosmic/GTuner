@@ -6,23 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/pitchText"
-        android:layout_width="86dp"
-        android:layout_height="39dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/noteText"
+        android:layout_width="222dp"
+        android:layout_height="109dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/purple_500"
+        android:textSize="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.697" />
+
+    <TextView
+        android:id="@+id/pitchText"
         android:layout_width="154dp"
         android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="@color/purple_500"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/guitar"
+        android:layout_width="273dp"
+        android:layout_height="346dp"
+        android:src="@drawable/guitar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pitchText" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.228" />
+
+    <Button
+        android:id="@+id/key1"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:text="D"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <Button
+        android:id="@+id/key2"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:text="A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <Button
+        android:id="@+id/key3"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:text="E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <Button
+        android:id="@+id/key4"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:text="G"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <Button
+        android:id="@+id/key5"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:text="B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <Button
+        android:id="@+id/key6"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:text="E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.365" />
+
+    <!--        android:entries="@array/Mode"-->
+
+    <Spinner
+        android:id="@+id/Mode_list"
+        android:layout_width="148dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#4D2595"
+        android:gravity="center"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/Mode_text"
+        android:layout_width="156dp"
+        android:layout_height="43dp"
+        android:gravity="center"
+        android:text="Mode:"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <TextView
+        android:id="@+id/alert_text"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
+        android:gravity="center"
+        android:text="TOO HIGH!"
+        android:textColor="@color/purple_500"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.907" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
