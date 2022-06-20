@@ -156,7 +156,7 @@ class MainActivity : Activity() {
                     key2.text = "A"
                     key3.text = "D"
                     key4.text = "G"
-                    key5.text = "B"
+                    key5.text = "H"
                     key6.text = "E"
                 }
 
