@@ -15,7 +15,7 @@ import be.tarsos.dsp.pitch.PitchDetectionHandler
 import be.tarsos.dsp.pitch.PitchProcessor
 import be.tarsos.dsp.pitch.PitchProcessor.PitchEstimationAlgorithm
 import kotlin.math.pow
-import kotlin.properties.Delegates
+import kotlinx.android.synthetic.main.activity_main.*
 
 var pitchInHz : Float = 0.0f
 var currentUserNote : Float = 0.0f
@@ -25,10 +25,7 @@ class MainActivity : Activity() {
     @SuppressLint("SetTextI18n")
     fun tes(){
         runOnUiThread {
-            val alertText = findViewById<TextView>(R.id.alert_text)
-            val topArrow = findViewById<ImageView>(R.id.topArrow)
-            val downArrow = findViewById<ImageView>(R.id.downArrow)
-            val okImage = findViewById<ImageView>(R.id.okImage)
+
 
             alertText.text = "TOO LOW!"
             topArrow.visibility = View.VISIBLE
@@ -42,10 +39,7 @@ class MainActivity : Activity() {
     fun tes2(){
 
         runOnUiThread {
-            val alertText = findViewById<TextView>(R.id.alert_text)
-            val topArrow = findViewById<ImageView>(R.id.topArrow)
-            val downArrow = findViewById<ImageView>(R.id.downArrow)
-            val okImage = findViewById<ImageView>(R.id.okImage)
+
 
             alertText.text = "TOO HIGH!"
             downArrow.visibility = View.VISIBLE
@@ -58,10 +52,6 @@ class MainActivity : Activity() {
     fun tes3(){
 
         runOnUiThread {
-            val alertText = findViewById<TextView>(R.id.alert_text)
-            val topArrow = findViewById<ImageView>(R.id.topArrow)
-            val downArrow = findViewById<ImageView>(R.id.downArrow)
-            val okImage = findViewById<ImageView>(R.id.okImage)
 
             alertText.text = "PERFECT!"
             downArrow.visibility = View.INVISIBLE
@@ -88,8 +78,7 @@ class MainActivity : Activity() {
                 111
             )
 
-        val pitchText = findViewById<View>(R.id.pitchText) as TextView
-        val noteText = findViewById<View>(R.id.noteText) as TextView
+
         noteText.setTypeface(null, Typeface.BOLD)
         pitchText.setTypeface(null, Typeface.ITALIC)
 
@@ -114,22 +103,10 @@ class MainActivity : Activity() {
         val infoTask = NoteInfoTask(this)
         infoTask.execute()
 
-//        val key1:Button = findViewById(R.id.key1)
-//        val buttonText:String = key1.getText().toString()
-//        val tuning_text:TextView = findViewById(R.id.tuningText)
-//        key1!!.setOnClickListener{
-//            tuning_text.setText("This should be $buttonText sound")
-//        }
 
-        val key1:Button = findViewById(R.id.key1)
-        val key2:Button = findViewById(R.id.key2)
-        val key3:Button = findViewById(R.id.key3)
-        val key4:Button = findViewById(R.id.key4)
-        val key5:Button = findViewById(R.id.key5)
-        val key6:Button = findViewById(R.id.key6)
         //Spinner Mode
         val mode :Array<String> = arrayOf("E", "Dropped D", "Open C")
-        val e: Spinner = findViewById(R.id.Mode_list)
+        val e: Spinner = findViewById(R.id.Mode_list) // to zostawiam bo Mode list
         val arrayAdapter =
             ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_dropdown_item,mode)
         e.adapter = arrayAdapter
@@ -156,7 +133,7 @@ class MainActivity : Activity() {
                     key2.text = "A"
                     key3.text = "D"
                     key4.text = "G"
-                    key5.text = "B"
+                    key5.text = "H"
                     key6.text = "E"
                 }
 
@@ -180,7 +157,7 @@ class MainActivity : Activity() {
 
         //map of frequency
         val soundsMap = mapOf("C" to 121.0f, "D" to 147.0f, "E" to 165.0f, "F" to 175.0f, "G" to 196.0f, "A" to 220.0f, "B" to 247.0f )
-        val alertText:TextView = findViewById(R.id.alert_text)
+
 
 
         key1.setOnClickListener{
@@ -196,8 +173,7 @@ class MainActivity : Activity() {
     }
 
     private fun processPitch(pitchInHz: Float) {
-        val pitchText = findViewById<View>(R.id.pitchText) as TextView
-        val noteText = findViewById<View>(R.id.noteText) as TextView
+
         var hz_info_text = ""
         if (pitchInHz != -1.0f) {
             hz_info_text = "${pitchInHz.toString()} Hz"
@@ -221,8 +197,8 @@ class MainActivity : Activity() {
             return sound[0]
         }
 
-        var tone:String = "X"
-        var index:Int = 1
+        var tone = "X"
+        var index = 1
         var curNoteFreq = 0.0
         while (curNoteFreq < 1000.0){
             curNoteFreq = get_note(index)
